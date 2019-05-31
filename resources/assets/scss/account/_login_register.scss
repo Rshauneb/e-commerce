@@ -1,0 +1,76 @@
+.content-area.login_register-page{
+  padding: 120px 0;
+  // color: red;
+.container{
+
+.box-container{
+    max-width: 700px;
+    margin: 0 auto;
+
+    h2{
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom:  2rem;
+    }
+
+    .login-grid{
+      display: grid;
+
+      &.login{
+        grid-template-columns: 1fr 2px 1fr;
+        grid-gap: 20px;
+      }
+
+      &.register{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+
+      form{
+        display: flex;
+        flex-direction: column;
+
+        
+
+        a{
+          margin-bottom: 1rem;
+        }
+
+
+      }
+
+      .line{
+        width: 1px;
+        height: 100%;
+        background-color: #e5e5e5;
+      }
+
+      .social-account{
+        display: flex;
+        flex-direction: column;
+
+        a{
+          display: flex;
+          justify-content: space-between;
+          background-color: #e5e5e5;
+          width: 100%;
+          font-size: 1rem;
+          padding: 10px;
+          margin: 0 0 1rem;
+          color: rgb(31, 31, 31);
+          text-decoration: none;
+        }
+      }
+    }
+    .footer{
+      margin: 1rem auto;
+      text-align: center;
+      color: #6c6c6c;
+
+      a{
+        text-decoration: none;
+      }
+    }
+    }
+  }
+}

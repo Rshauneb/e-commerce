@@ -1,0 +1,102 @@
+@layout('layouts/main')
+
+@section('title')
+  Freshgear | All Products
+@endsection
+
+@section('content')
+  <section class="content-area product-all-page">
+
+    <div class="filter-section">
+      <div class="filter">
+          <input type="checkbox" name="" value="" id="gender-options" class="toggle" />
+          <label class="title" for="gender-options">Gender</label>
+          <div class="content">
+            <div class="gender">
+              <div class="option">male</div>
+              <div class="option">female</div>
+            </div>
+          </div>
+      </div>
+      <div class="filter">
+          <input type="checkbox" name="" value="" id="brand-options" class="toggle" />
+          <label class="title" for="brand-options">brand</label>
+          <div class="content">
+            <div class="brand">
+              <div class="option">adidas</div>
+              <div class="option">Air Jordan</div>
+              <div class="option">asics</div>
+              <div class="option">new balance</div>
+              <div class="option">nike</div>
+              <div class="option">puma</div>
+              <div class="option">reebok</div>
+              <div class="option">under armour</div>
+            </div>
+          </div>
+      </div>
+      <div class="filter">
+          <input type="checkbox" name="" value="" id="size-options" class="toggle" />
+          <label class="title" for="size-options">size</label>
+          <div class="content">
+            <div class="size">
+              <div class="option">4</div>
+              <div class="option">4.5</div>
+              <div class="option">5</div>
+              <div class="option">5.5</div>
+              <div class="option">6</div>
+              <div class="option">6.5</div>
+              <div class="option">7</div>
+              <div class="option">7.5</div>
+              <div class="option">8</div>
+              <div class="option">8.5</div>
+              <div class="option">9</div>
+              <div class="option">9.5</div>
+              <div class="option">10</div>
+              <div class="option">10.5</div>
+              <div class="option">11</div>
+              <div class="option">11.5</div>
+              <div class="option">12</div>
+              <div class="option">12.5</div>
+              <div class="option">13</div>
+              <div class="option">13.5</div>
+            </div>
+          </div>
+      </div>
+      <div class="filter">
+          <input type="checkbox" name="" value="" id="price-options" class="toggle" />
+          <label class="title" for="price-options">price</label>
+          <div class="content">
+            <div class="price">
+              <input type="text" name="min" placeholder="min" value="" class="option placeholder" >
+              <input type="text" name="max" placeholder="max" value="" class="option placeholder" >
+            </div>
+          </div>
+      </div>
+
+      <button type="button" name="button">Filter</button>
+    </div>
+  <div class="all-product-grid">
+    {{-- {{products}} --}}
+    @each(product in products)
+    <div class="product-wrap">
+      <a class="product-wrap-link" href="/nike/vapourmax/grey">
+        <div class="product">
+          <div class="circle">
+            <img src="https://i.postimg.cc/VNf88k7G/Nike-Air-Vapor-Max-Flyknit-2-OG-hd-1600-2.png" alt="">
+          </div>
+        </div>
+        <div class="title">Nike VapourMax</div>
+        <div class="price">$255</div>
+      </a>
+    </div>
+    @endeach
+
+    </div>
+</section>
+@endsection
+
+@section('javascript')
+  <script type="text/javascript">
+    console.log("howdy");
+  </script>
+@endsection

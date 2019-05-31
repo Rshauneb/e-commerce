@@ -1,0 +1,217 @@
+.content-area.product-all-page{
+  padding: 100px 0 0;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #e3e8ec;
+
+
+  .filter-section{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0 20px 200px;
+
+
+    button{
+      background-color: #fff;
+      padding: 1rem;
+      display: block;
+      color: black;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
+      width: 100%;
+      border: none;
+    }
+    .toggle{
+      display: none;
+      &:checked{
+        & + .title + .content{
+          max-height: 200px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+        }
+        & + .title:before{
+          transform: rotate(90deg) !important;
+        }
+      }
+    }
+
+    .filter{
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .filter:first-child{
+      margin-top: 2rem;
+    }
+
+    .title,.content{
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      transition: all .2s;
+    }
+
+    .title{
+      background-color: #fff;
+      padding:1rem;
+      display: block;
+      color: black;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+    .title:after, .title:before{
+      content: '';
+      position: absolute;
+      right: 1.25em;
+      top: 1.25em;
+      width: 2px;
+      height: 0.75em;
+      background-color: black;
+      transition: all 0.2s;
+    }
+    .title:after{
+      transform: rotate(90deg);
+    }
+
+    .content{
+      max-height: 0;
+      overflow: hidden;
+
+      .gender, .brand, .size, .price{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        list-style: none;
+        text-align: center;
+      }
+
+      .brand{
+        // display:
+      }
+
+      .size{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      .price{
+        font-size: 1.2rem;
+
+        & input::placeholder{
+          text-align: center;
+        }
+        .option:hover{
+          background-color: #fff !important;
+          color: grey !important;
+          font-weight: 500;
+        }
+      }
+
+      .option{
+        border: 1px solid white;
+        padding: 10px;
+        display: inline-block;
+        color: grey;
+        transition: all .2s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover, &.selected{
+          background-color: red;
+          color: white;
+          font-weight: 700;
+          border: 1px solid red;
+        }
+      }
+    }
+  }
+
+  .all-product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0 20px;
+    position: relative;
+    overflow-y: scroll;
+
+    .product-wrap{
+      text-align: center;
+      cursor: pointer;
+
+      .product-wrap-link{
+        text-decoration: none;
+        color: #484c4f;
+        transition: all .4s ease-in-out;
+
+        &:hover{
+          color: #ff3f4f;
+        }
+
+        .title{
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        .price{
+          // font-size: 1.9rem;
+        }
+      }
+    }
+
+    .product{
+      width: 100%;
+      height: 300px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .circle{
+        background-color: #ff3f4f;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 29px 74px 0px rgba(156, 156, 156, .8);
+
+         img{
+           width: 300px;
+           position: relative;
+           bottom: 40px;
+         }
+      }
+    }
+  }
+  .titles{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-shadow: 1px 3px black;
+    padding-left: 100px;
+    h3{
+      font-size: 5rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    h1{
+      font-size: 10rem;
+      color: white;
+      margin-bottom: 2rem;
+      font-weight: 900;
+    }
+  }
+}
+ // input .placeholder{
+ //   text-align: center;
+ // }

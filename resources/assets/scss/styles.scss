@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "reset";
+@import "products/all";
+@import "products/single";
+@import "pages/home";
+@import "pages/about";
+@import "account/account";
+@import "account/login_register";
+@import "account/account";
+@import "cart/checkout";
+
+
+
+
+body {
+  line-height: 1;
+  background: white;
+
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e3e8ec;
+}
+
+.container{
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+header{
+  background-color: #e3e8ec;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  z-index: 1;
+
+  // & + .landing{
+  //   z-index: 0;
+  // }
+
+  .logo{
+    font-weight: 700;
+    color: #484c4f;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    a{
+      color: #484c4f;
+      text-decoration: none;
+      transition: color .2s ease-in-out;
+
+      &:hover{
+        color: #ff3f4f;
+      }
+    }
+  }
+  .menu{
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 20px 0;
+
+    #cartBtnRoot{
+      display: inline-block;
+
+      background-color: #484c4f;
+      color: #fff;
+      padding: 10px 20px;
+      display: inline-block;
+      position: relative;
+      border-radius: 20px;
+
+      span{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        border-radius: 50%;
+        color: #ff3f4f;
+      }
+    }
+
+    a{
+      color: #ff3f4f;
+      padding:0 15px 0 15px;
+      text-decoration: none;
+      text-align: center;
+      transition: color .4s ease-in-out;
+
+      &:hover{
+        color: #484c4f;
+      }
+
+      &.cart-link{
+        background-color: #484c4f;
+        color: #fff;
+        padding: 10px 20px;
+        display: inline-block;
+        position: relative;
+        border-radius: 20px;
+
+        span{
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #000;
+          border-radius: 50%;
+          color: #ff3f4f;
+        }
+      }
+    }
+
+  }
+}
+
+.content-area{
+  filter: blur(0);
+  transition: filter .4s ease-in-out;
+  background-color: #e3e8ec;
+
+  &.cart-popup-active{
+    filter: blur(30px);
+  }
+  &.home-page{
+
+  }
+}
+
+
+
+#cart-popup{
+  background-color: #f2f6f7;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 5% 50% 1fr 1fr 1fr;
+  transform: translate3d(0,500px,0);
+  transition: transform .4s ease-in-out;
+
+  &.active{
+    transform: translate3d(0,0,0);
+  }
+  .cart-title{
+    width: 100px;
+    max-width: 100px;
+    position: relative;
+
+    .title{
+      position: absolute;
+      font-size: 2rem;
+      color: #b6bfc6;
+      transform: rotate(-90deg);
+      width: 200px;
+      text-transform: uppercase;
+      // bottom: 118px;
+      top:52px;
+      left: -62px;
+    }
+  }
+  .cart-items{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .item-container{
+      width: 200px ;
+      display: inline-block;
+    }
+    .item{
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      padding: 70px 20px;
+      img{
+        position: absolute;
+        left: -41px;
+        width: 100%;
+        transform: rotate(90deg);
+      }
+      .delete-btn{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 30px;
+        padding: 10px;
+        cursor: pointer;
+        &:hover{
+          .circle{
+            background-color: red;
+          }
+        }
+      }
+      .circle{
+        background-color: #f2f6f7;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: white;
+        transition: background-color .4s ease-in-out;
+      }
+    }
+  }
+  .product-total, .price-total{
+    display: flex;
+    align-items: center;
+
+  .inside-containter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 3px solid #ff3f4f;
+    width: 100%;
+    margin-right: 20px;
+  }
+
+    .title{
+      color: #b6bfc6;
+      background-color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+
+    }
+    .number{
+      font-size: 2rem;
+      font-weight: 700;
+      color: #b6bfc6;
+
+    }
+  }
+  .checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display:flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    &:hover{
+      .ti-shopping-cart{
+        color: #ff3f4f;
+      }
+    }
+
+    .title{
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+
+.box-container{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 80px 20px;
+}
+
+
+form{
+  input[type="password"], input[type="email"], input[type="text"]{
+    width: 100%;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  button{
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    padding: 10px;
+    background-color: #1345fa;
+    color: #fff;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,74 @@
+@layout('layouts/main')
+
+@section('title')
+  Freshgear | Oders
+@endsection
+
+@section('content')
+<section class="content-area account-page" name="">
+  <div class="container">
+    <div class="box-container">
+      <h1>orders</h1>
+      <hr></hr>
+
+      <div class="checkout-grid">
+        <div class="forms">
+          <div class="order-list">
+            <table>
+              <thead>
+                <tr>
+                  <td>ID</td>
+                  <td>date</td>
+                  <td>price</td>
+                  <td>status</td>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>49663</td>
+                  <td>4/16/2019</td>
+                  <td>$208.14</td>
+                  <td><span class="tagged shipped">shipped</span></td>
+                </tr>
+                <tr>
+                  <td>49347</td>
+                  <td>10/01/2018</td>
+                  <td>$441.23</td>
+                  <td><span class="tagged cancelled">cancelled</span></td>
+                </tr>
+                <tr>
+                  <td>48418</td>
+                  <td>24/01/2018</td>
+                  <td>$369.74</td>
+                  <td><span class="tagged shipped">shipped</span></td>
+                </tr>
+                <tr>
+                  <td>48804</td>
+                  <td>22/05/2019</td>
+                  <td>$451.72</td>
+                  <td><span class="tagged shipped">shipped</span></td>
+                </tr>
+                <tr>
+                  <td>46570</td>
+                  <td>23/09/2019</td>
+                  <td>$357.25</td>
+                  <td><span class="tagged shipped">shipped</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="sub-menu">
+          @include('account/sub-menu')
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+@endsection
+
+@section('javascript')
+  <script type="text/javascript">
+    // console.log("howdy");
+  </script>
+@endsection

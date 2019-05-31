@@ -1,0 +1,57 @@
+.content-area.home-page{
+
+  .top-section{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .product{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .circle{
+        background-color: #ff3f4f;
+        border-radius: 50%;
+        width: 700px;
+        height: 700px;
+        // position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // box-shadow: 0px 10px 151px 0px rgba(156, 156, 156, .8);   old shadow messing with elements near by
+        box-shadow: 0px 29px 74px 0px rgba(156, 156, 156, .8);
+        // z-index: 3;
+        margin-top: 50px;
+
+         img{
+           width: 1000px;
+           position: relative;
+           bottom: 110px;
+
+         }
+      }
+    }
+  }
+  .titles{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-shadow: 1px 3px black;
+    padding-left: 100px;
+    h3{
+      font-size: 5rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    h1{
+      font-size: 10rem;
+      color: white;
+      margin-bottom: 2rem;
+      font-weight: 900;
+    }
+  }
+}
